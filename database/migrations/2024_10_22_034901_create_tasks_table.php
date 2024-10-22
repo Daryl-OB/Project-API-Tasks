@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('titulo');
             $table->string('descripcion');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->enum('estado', ['pendiente', 'completado', 'en progreso'])->default('pendiente');
             $table->enum('prioridad', ['bajo', 'medio', 'alto'])->default('medio');
             $table->timestamps();
